@@ -224,41 +224,73 @@ h2::after {
 }
 
 /* Skills Section styles */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.skills-section {
+  background-color: #0d0d0d;
+  padding: 4rem 2rem;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
 }
-.skill-category h4 {
-  margin-bottom: 0.5rem;
-  color: #00ffff;
-  text-shadow: 0 0 3px #0ff;
-}
-.progress-bar {
-  background: #222;
-  border: 1px solid #555;
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00fff7;
+  margin-bottom: 2rem;
   position: relative;
-  /* initially collapsed width for animation (set in JS) */
-  width: 0;
-  height: 8px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.skills-column {
+  flex: 1 1 400px;
+  padding: 1rem;
+  background: rgba(0, 255, 247, 0.1);
+  border: 1px solid #00fff7;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00fff7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-column:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00fff7;
+}
+
+.skill-category {
+  color: #00fff7;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  overflow: visible;
+  border-bottom: 1px solid #00fff7;
+  padding-bottom: 0.3rem;
 }
-.progress-bar::after {
-  content: "";
+
+.skills-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.skills-column ul li {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+  padding-left: 0.5rem;
+  position: relative;
+  color: #f0f0f0;
+}
+
+.skills-column ul li::before {
+  content: "◆";
   position: absolute;
-  top: -2px; left: -2px; right: -2px; bottom: -2px;
-  border: 2px solid #00ffff;
-  opacity: 0.5;
-  box-shadow: 0 0 10px #00ffff;
-  /* Only show glow when bar filled (we will animate opacity in JS) */
-  opacity: 0;
-}
-.skill-label {
-  display: block;
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
-  color: #ccc;
+  left: 0;
+  color: #00fff7;
+  font-size: 0.8rem;
+  top: 0.2rem;
 }
 
 /* Experience Section */
